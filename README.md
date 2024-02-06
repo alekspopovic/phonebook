@@ -1,6 +1,6 @@
-# Contact Book App with React, Firebase, and Tailwind CSS
+# Contacts App with React, Firebase, and Tailwind CSS
 
-This repository contains the code for a simple contact book app built using React, Firebase, and Tailwind CSS. The project is designed as a practical tutorial to help beginners and intermediate developers solidify their understanding of React and how it can be integrated with Firebase for backend functionality and Tailwind CSS for styling.
+This repository contains the code for a simple contacts app built using React, Firebase, and Tailwind CSS. The project is designed as a practical tutorial to help beginners and intermediate developers solidify their understanding of React and how it can be integrated with Firebase for backend functionality and Tailwind CSS for styling.
 
 <img src="./src/images/desktop.png" width="800px" alt="Desktop version"/>
 
