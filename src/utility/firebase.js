@@ -24,10 +24,13 @@ const addContactToFirebase = async (contact) => {
 const getContactsFromFirebase = async () => {
   try {
     const querySnapshot = await getDocs(collection(firestore, "contacts"));
+
     const contacts = [];
+
     querySnapshot.forEach((doc) => {
       contacts.push({ id: doc.id, ...doc.data() });
     });
+
     return contacts;
   } catch (error) {
     console.error("Error fetching contacts: ", error);

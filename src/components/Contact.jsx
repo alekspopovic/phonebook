@@ -5,14 +5,14 @@ import DeleteIcon from "../icons/delete.svg";
 import Icon from "./Icon";
 import getColor from "../utility/getColor";
 
-export default function Card({ contact, removeContact }) {
+export default function Contact({ contact, removeContact }) {
   const initials = contact.name
     .split(" ")
     .map((word) => word[0])
     .join("");
 
   return (
-    <div className="flex w-full flex-col overflow-hidden rounded-md bg-gray-50 shadow shadow-neutral-300 sm:w-56">
+    <div className="bg-bray-50 flex w-full flex-col overflow-hidden rounded-md shadow shadow-neutral-300 sm:w-56">
       <div className="flex items-center border-b border-gray-200">
         {initials && (
           <span

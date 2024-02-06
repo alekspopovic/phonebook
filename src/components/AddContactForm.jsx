@@ -8,8 +8,6 @@ const defaultState = {
 };
 
 export default function AddContactForm({ addContact, isOpen, close }) {
-  const cancelButtonRef = useRef(null);
-
   const [formData, setFormData] = useState(defaultState);
 
   const handleChange = (e) => {
@@ -18,9 +16,7 @@ export default function AddContactForm({ addContact, isOpen, close }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     addContact(formData);
-
     closeAndResetData();
   };
 
@@ -31,16 +27,14 @@ export default function AddContactForm({ addContact, isOpen, close }) {
 
   return (
     <div
-      className={`${
-        isOpen ? "z-10 opacity-100" : "pointer-events-none opacity-0"
-      } transition-opacity duration-300 ease-in-out`}
+      className={`${isOpen ? "z-10 opacity-100" : "pointer-events-none opacity-0"} transition-opacity duration-300 ease-in-out`}
     >
-      <div className="fixed inset-0 bg-gray-500 bg-opacity-75" />
+      <div className="fixed inset-0 bg-gray-500 bg-opacity-75"></div>
       <div className="fixed inset-0 z-10 w-screen">
         <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-          <div className="w-full sm:my-8 sm:max-w-lg">
+          <div className="sm-my-8 w-full sm:max-w-lg">
             <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-              <div className="sm:flex sm:items-start">
+              <div className="sm-items-start sm:flex">
                 <form
                   className="mt-3 w-full text-left sm:ml-4 sm:mt-0"
                   onSubmit={handleSubmit}
@@ -82,7 +76,7 @@ export default function AddContactForm({ addContact, isOpen, close }) {
                   </div>
                   <div className="mb-2">
                     <label
-                      htmlFor="phoneNumber"
+                      htmlFor="phone"
                       className="block font-bold text-gray-700"
                     >
                       Phone Number:
@@ -109,7 +103,7 @@ export default function AddContactForm({ addContact, isOpen, close }) {
                       name="website"
                       value={formData.website}
                       onChange={handleChange}
-                      className="w-full rounded border px-3 py-2 leading-tight text-gray-700 shadow"
+                      className="w-full rounded border px-3 py-2 text-gray-700 shadow"
                     />
                   </div>
                   <div className="px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
@@ -121,9 +115,8 @@ export default function AddContactForm({ addContact, isOpen, close }) {
                     </button>
                     <button
                       type="button"
-                      className="mt-3 w-full justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 sm:mt-0 sm:w-auto"
                       onClick={closeAndResetData}
-                      ref={cancelButtonRef}
+                      className="mt-3 w-full justify-center rounded-md border bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-50 sm:mt-0 sm:w-auto"
                     >
                       Cancel
                     </button>
